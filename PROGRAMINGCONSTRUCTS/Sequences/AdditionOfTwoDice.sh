@@ -1,0 +1,14 @@
+#!/bin/bash -x
+
+#GENERATING  RANDOM NUMBERS FOR DICE1
+diceOne=$(( RANDOM%6+1 ))
+
+#GENERATING  RANDOM NUMBERS FOR DICE2
+diceTwo=$(( RANDOM%6+1 ))
+
+#ADDITION OF TWO DICES
+add=$(($diceOne+$diceTwo))
+
+#DISPLAYING ADDITION
+echo "$add"
+
