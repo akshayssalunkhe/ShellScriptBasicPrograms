@@ -12,19 +12,20 @@ totalSalary=0;
 #CALCULATING SALARY FOR WORKING DAYS
 for (( day=1; day<=$NUM_WORKING_DAYS ;day++ ))
 do
-  	empCheck=$((RANDOM%3));
-		case $empCheck in 
-					$IS_FULL_TIME)
-							empHrs=8
-							;;
-					$IS_PART_TIME)
-								empHrs=4
-								;;
-					*)
-						empHrs=0
-								;;
-esac
+	empCheck=$((RANDOM%3));
+	case $empCheck in 
+	$IS_FULL_TIME)
+			empHrs=8
+			;;
+	$IS_PART_TIME)
+			empHrs=4
+			;;
+	*)
+			empHrs=
+			;;
+	esac
 
-		salary=$(($empHrs*$EMP_RATE_PER_HR));
-		totalSalary=$(($totalSalary+$salary));
+#CALCULATING SALARY 
+salary=$(($empHrs*$EMP_RATE_PER_HR));
+totalSalary=$(($totalSalary+$salary));
 done
