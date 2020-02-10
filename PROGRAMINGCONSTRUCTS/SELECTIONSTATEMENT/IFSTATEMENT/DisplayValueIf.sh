@@ -1,9 +1,11 @@
 #!/bin/bash -x
+
+#INPUT FROM USER
 read -p "Enter the Value: " V
 
 if [ $V -eq 1 ]
 then
-		echo "ONE"
+      echo "ONE"
 fi
 
 if [ $V -eq 10 ]
