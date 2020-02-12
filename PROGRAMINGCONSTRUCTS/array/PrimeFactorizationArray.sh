@@ -1,21 +1,24 @@
 #!/bin/bash -x
 
-#INPUT FROM USER
-read -p "Enter Number : " NUM
-
 #VARIABLE
+number=0;
 j=0;
-for (( i=2; i<=$NUM;  ))
+
+#INPUT FROM USER
+read -p "Enter Number : " number
+
+#FINDING PRIME FACTORES AND STORING IN ARRAY
+for (( index=2; index<=$number;  ))
 do
-	if [ $(($NUM%$i)) -eq 0 ]
-then
-	a[j]=$i;
-	j=$(($j+1));
-	NUM=$(($NUM/$i))
-else
-	((i=$i+1))
-fi
+	if [ $(($number%$index)) -eq 0 ]
+	then
+			primefactors[j]=$index
+			((j++))
+			number=$(($number/$index))
+	else
+			((index++))
+	fi
 done
 
-#DISPLAYING ARRAY OF PRIME FACTORS
-echo "${a[@]}"
+#DISPLYING PRIME FACTORS ARRAY
+echo "Prime Factors Are:"${primefactors[@]}
