@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-#VARIABLEs
+#VARIABLES
 number=0;
 j=0;
 
