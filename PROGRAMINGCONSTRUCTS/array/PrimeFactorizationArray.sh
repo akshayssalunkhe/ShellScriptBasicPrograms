@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-#VARIABLE
+#VARIABLEs
 number=0;
 j=0;
 
@@ -12,11 +12,11 @@ for (( index=2; index<=$number;  ))
 do
 	if [ $(($number%$index)) -eq 0 ]
 	then
-			primefactors[j]=$index
-			((j++))
-			number=$(($number/$index))
+		primefactors[j]=$index
+		((j++))
+		number=$(($number/$index))
 	else
-			((index++))
+		((index++))
 	fi
 done
 
