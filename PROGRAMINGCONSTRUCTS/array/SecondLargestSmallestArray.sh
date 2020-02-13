@@ -1,49 +1,51 @@
 #!/bin/bash -x
 
-#TO GENERATE RANDOM NUMBER
-for((i=0;i<=9;i++))
+#VARIABLES INITIALISION
+firstMaximum=0;
+secondMaximum=0;
+firstMinimum=0;
+secondMinimum=0;
+
+#TO GENERATE RANDOM NUMBERS
+for(( index=0; index<=9; index++ ))
 do
-	a[i]=$((RANDOM%900+100))
+	randomNumber[index]=$((RANDOM%900+100))
 done
 
-echo ${a[@]}
+#ASSIGNNING VALUE TO VARIABLES
+firstMaximum=${randomNumber[0]};
+secondMaximum=${randomNumber[0]};
 
-#TO FIND  SECOND MAX ELEMENT
-#VARIABLE INITIALIZATION
-max=${a[0]};
-secMax=${a[0]};
-
-#LOGIC TO FIND SECOND MAX
-for (( i=0; i<=9; i++ ))
+#TO FIND SECOND MAXIMUM NUMBER
+for (( index=0; index<=9; index++ ))
 do
-	if [[ a[i] -gt $max ]]
+	if [[ randomNumber[index] -gt $firstMaximum ]]
 	then
-		secMax=$max;
-		max=${a[i]};
-	elif [[ a[i] -gt $secMax  &&  a[i] -lt $max ]]
-		then
-			secMax=${a[i]};
+		secondMaximum=$firstMaximum;
+		firstMaximum=${randomNumber[index]};
+	elif [[ randomNumber[index] -gt $secondMaximum && randomNumber[index] -lt $firstMaximum ]]
+	then
+		secondMaximum=${randomNumber[index]};
 	fi
 done
-echo "SECOND LARGEST ELEMENT IN ARRAY IS = $secMax ";
+echo "Second Largest Number In Array = $secondMaximum";
 
+#ASSIGNNING VALUE TO VARIABLES
+firstMinimum=${randomNumber[0]};
+secondMinimum=${randomNumber[0]};
 
-#VARIABLE INITIALIZATION
-min=${a[0]};
-secMin=${a[0]};
-
-#TO FIND SECOND SMALLEST ELEMENT
-for (( i=0; i<=9; i++ ))
+#TO FIND SECOND SMALLEST NUMBER
+for (( index=0; index<=9; index++ ))
 do
-   if [[ a[i] -lt $min ]]
-   then
-      secMin=$min;
-      min=${a[i]};
-   elif [[ a[i] -lt $secMin  &&  a[i] -gt $min ]]
-   	then
-         secMin=${a[i]};
-   fi
+	if [[ randomNumber[index] -lt $firstMinimum ]]
+	then
+      secondMinimum=$firstMinimum;
+      firstMinimum=${randomNumber[index]};
+	elif [[ randomNumber[index] -lt $secondMinimum && randomNumber[index] -gt $firstMinimum ]]
+	then
+		secondMinimum=${randomNumber[index]};
+	fi
 done
-echo "SECOND SMALLEST NUMBER IN ARRAY IS = $secMin"
+echo "Second Smallest Number In Array = $secondMinimum"
 
 
