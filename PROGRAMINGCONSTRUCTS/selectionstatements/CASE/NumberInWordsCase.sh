@@ -1,9 +1,12 @@
 #!/bin/bash -x
 
-#USER INPUT
-read -p "Enter the Single Digit Number: " Num
+#VARIABLE
+number=0;
 
-case "$Num" in
+#USER INPUT
+read -p "Enter the Single Digit Number: " number
+
+case "$number" in
 	0)echo "ZERO"
 		;;
 	1) echo "ONE"
