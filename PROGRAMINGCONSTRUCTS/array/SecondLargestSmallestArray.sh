@@ -39,8 +39,8 @@ for (( index=0; index<=9; index++ ))
 do
 	if [[ randomNumber[index] -lt $firstMinimum ]]
 	then
-      secondMinimum=$firstMinimum;
-      firstMinimum=${randomNumber[index]};
+		secondMinimum=$firstMinimum;
+		firstMinimum=${randomNumber[index]};
 	elif [[ randomNumber[index] -lt $secondMinimum && randomNumber[index] -gt $firstMinimum ]]
 	then
 		secondMinimum=${randomNumber[index]};
