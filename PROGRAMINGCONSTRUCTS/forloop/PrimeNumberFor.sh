@@ -1,24 +1,25 @@
 #!/bin/bash -x
 
-#USER INPUT
-read -p "Enter the Number: " NUM
+#VARIABLES
+number=0;
+isprime=0;
 
-#VARIABLE
-isprime=1;
+#USER INPUT
+read -p "Enter the Number: " number
 
 #TO CHECK NUMBER IS PRIME OR NOT
-for (( i=2; i<=$NUM/2; i++ ))
+for (( index=2; index<=$number/2; index++ ))
 do
-	if [ $(($NUM%$i)) -eq 0 ]
+	if [ $(($number%$index)) -eq 0 ]
 	then
-		isprime=$(($isprime-1));
+		((isprime++));
 		break;
 	fi
 done
 
 if [ $isprime -eq 0 ]
 then
-	echo "Not a Prime Number "
+	echo "Number Is Prime"
 else
-	echo "Prime Number "
-fi 
+	echo "Number Is Not Prime"
+fi
