@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 #VARIABLE
-result=0;
+dicesResult=0;
 
 #DECLEARING DICTIONARY
 declare -A dice
@@ -11,9 +11,9 @@ while [[ ${dice[1]} -lt 10 && ${dice[2]} -lt 10 &&
 	${dice[3]} -lt 10 && ${dice[4]} -lt 10 &&
 	${dice[5]} -lt 10 && ${dice[6]} -lt 10 ]]
 do
-	result=$((RANDOM%6+1))
-	echo "result = $result"
-	dice[$result]=$((${dice[$result]}+1));
+	dicesResult=$((RANDOM%6+1))
+	echo "dicesResult = $dicesResult"
+	dice[$dicesResult]=$((${dice[$dicesResult]}+1));
 done
 
 #FINDING MAXIMUM OCCURENCE NUMBER
