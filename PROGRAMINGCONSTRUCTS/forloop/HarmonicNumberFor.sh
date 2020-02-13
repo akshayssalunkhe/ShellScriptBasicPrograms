@@ -1,13 +1,15 @@
 #!/bin/bash -x
 
-#INPUT FROM USER
-read -p "Enter value: " N
+#VARIABLES
+number=0;
+harmonicValue=0;
 
-#VARIABLE
-sum=0;
+#INPUT FROM USER
+read -p "Enter value: " number
+
 #CALCULATING HARMONIC NUMBER VALUE
-for (( i=1; i<=N; i++ ))
+for (( index=1; index<=number; index++ ))
 do
-	sum="` echo "scale=2;($sum+1.0/$i)" |bc`" 
+	harmonicValue="` echo "scale=2;($harmonicValue+1.0/$index)" |bc`"
 done
-	echo "Harmonic value of $N = $sum;"
+printf "Harmonic value of $number = $harmonicValue";
