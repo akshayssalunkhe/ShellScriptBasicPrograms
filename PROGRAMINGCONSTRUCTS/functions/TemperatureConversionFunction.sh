@@ -1,13 +1,18 @@
 #!/bin/bash -x
 
+#VARIABLES
+temperature=0;
+degree=0;
+choice=0;
+
 #USER INPUT
-read -p "enter temp " temp
+read -p "enter temperature " temperature
 
 #TO CALCULATE TEMPERATURE IN DEGREE
-function getTempretureInDegree() {
-	if [[ $temp -gt 0 && $temp -lt 100 ]]
+function getTemperatureInDegree() {
+	if [[ $temperature -gt 0 && $temperature -lt 100 ]]
 	then
-		degree=$((($temp-32)*5/9))
+		degree=$( echo "scale=2; ((($temperature-32)*5/9))" |bc )
 		echo "$degree"
 	else
 		echo "Wrong Input"
@@ -15,10 +20,10 @@ function getTempretureInDegree() {
 }
 
 #TO CALCULATE TEMPERATURE IN FAHRENHEIT
-function getTempretureInFahrenheit() {
-	if [[ $temp -ge 32 && $temp -le 212 ]]
+function getTemperatureInFahrenheit() {
+	if [[ $temperature -ge 32 && $temperature -le 212 ]]
 	then
-      Fahrenheit=$((($temp*9/5)+32))
+      Fahrenheit=$( echo "scale=2; ((($temperature*9/5)+32))" |bc )
       echo "$Fahrenheit"
 	else
    	echo "Wrong Input"
@@ -26,13 +31,15 @@ function getTempretureInFahrenheit() {
 }
 
 #ASKING CHOICE OF USER
-read -p " for Fahrenheit to degree =1;for Degree to Fahrenheit =2;" ch
-case $ch in
-	1)getTempretureInDegree $(temp)
-		;;
-	2) getTempretureInFahrenheit $(temp)
-		;;
-   *)
+read -p " For Fahrenheit to degree = 1; For Degree to Fahrenheit = 2;" choice
+case $choice in
+	1)
+		( getTemperatureInDegree $temperature )
+			;;
+	2)
+		( getTemperatureInFahrenheit $temperature )
+			;;
+	*)
 		echo "INVALID INPUT"
-   	;;
+			;;
 esac
