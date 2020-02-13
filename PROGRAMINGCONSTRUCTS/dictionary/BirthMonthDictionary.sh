@@ -1,25 +1,22 @@
 #!/bin/bash -x
 
-declare -A BirthMonth
+#DECLARING DICTIONARY
+declare -A birthMonth
+
 #VARIABLE
-count=1
+count=1;
 
 #GENERATING BIRTH MONTH 
 while [[ $count -le 50 ]]
 do
-result=$(( (RANDOM%12)+1 ))
-BirthMonth[$result]=$((${BirthMonth[$result]}+1))
-count=$(($count+1))
+	result=$(( (RANDOM%12)+1 ))
+	birthMonth[$result]=$((${birthMonth[$result]}+1))
+	count=$(($count+1))
 done
 
-#DISPLAYING COUNT OF BIRTHDAY PER MONTHS
-echo "${BirthMonth[@]}"
-
-#DISPLAYING MONTHS
-echo "${!BirthMonth[@]}"
 
 #DISPLAYING INDIVIDUALS BIRTHDAY PER MONTH
-for (( i=1; i<=12; i++ ))
+for (( month=1; month<=12; month++ ))
 do
-	echo "In Month $i = ${BirthMonth[$i]} Individuals Having Birthday "
+	echo "In Month $month = ${birthMonth[$month]} Individuals Having Birthday "
 done
