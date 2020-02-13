@@ -16,9 +16,9 @@ do
 	do
 		if [[ randomNumber[count] -gt randomNumber[count+1] ]]
 		then
-		temp=${randomNumber[count]};
-		randomNumber[count]=${randomNumber[count+1]};
-		randomNumber[count+1]=$temp;
+			temp=${randomNumber[count]};
+			randomNumber[count]=${randomNumber[count+1]};
+			randomNumber[count+1]=$temp;
 		fi
 	done
 done
