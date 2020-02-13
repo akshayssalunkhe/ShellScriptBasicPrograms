@@ -1,29 +1,27 @@
 #!/bin/bash -x
 
+#VARIABLE
+temp=0;
+
 #TO GENERATE ARRAY ELEMENTS
-for (( i=0; i<=9; i++ ))
+for (( index=0; index<=9; index++ ))
 do
-	a[i]=$((RANDOM%900+100));
+	randomNumber[index]=$((RANDOM%900+100));
 done
 
-#DISPLAYING ARRAY ELEMENTS
-echo "${a[@]}"
-
 #SORTING ARRAY
-temp=0;
-for (( i=0;i<9;i++ ))
+for (( index=0; index<9; index++ ))
 do
-	for (( j=0; j<9; j++ ))
+	for (( count=0; count<9; count++ ))
 	do
-		if [[ a[j] -gt a[j+1] ]]
+		if [[ randomNumber[count] -gt randomNumber[count+1] ]]
 		then
-			temp=${a[j]};
-			a[j]=${a[j+1]};
-			a[j+1]=$temp;
+		temp=${randomNumber[count]};
+		randomNumber[count]=${randomNumber[count+1]};
+		randomNumber[count+1]=$temp;
 		fi
 	done
 done
 
-echo "${a[@]}"
-echo "Second Smallest Element in Array is = ${a[1]}"
-echo "Second largest element in Array is = ${a[8]}"
+echo "Second Smallest Element in Array is = ${randomNumber[1]}"
+echo "Second largest element in Array is = ${randomNumber[8]}"
