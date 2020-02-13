@@ -1,13 +1,19 @@
 #!/bin/bash
 
-#USER INPUT
-read -p "enter the power : " power
-
 #VARIABLE
-sum=1
+sum=1;
 
-for (( i=1; i<=$power; i++ ))
-do
-	sum=$(($sum * 2 ))
-	echo " 2 power $int =  $sum"
-done
+#COMMAND LINE INPUT
+power=$1;
+
+#CALCULATING POWER OF TWO
+if [ $power -eq 0 ]
+then
+	echo "2 ^ 0 = 1"
+else
+	for (( index=1; index<=$power; index++ ))
+	do
+		sum=$(( $sum * 2 ))
+		echo "2 ^ $index = $sum"
+	done
+fi
