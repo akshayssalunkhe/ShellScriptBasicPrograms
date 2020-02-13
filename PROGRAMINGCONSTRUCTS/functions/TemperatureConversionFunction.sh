@@ -4,6 +4,7 @@
 temperature=0;
 degree=0;
 choice=0;
+fahrenheit=0;
 
 #USER INPUT
 read -p "enter temperature " temperature
@@ -23,8 +24,8 @@ function getTemperatureInDegree() {
 function getTemperatureInFahrenheit() {
 	if [[ $temperature -ge 32 && $temperature -le 212 ]]
 	then
-      Fahrenheit=$( echo "scale=2; ((($temperature*9/5)+32))" |bc )
-      echo "$Fahrenheit"
+		fahrenheit=$( echo "scale=2; ((($temperature*9/5)+32))" |bc )
+		echo "$fahrenheit"
 	else
    	echo "Wrong Input"
 	fi
