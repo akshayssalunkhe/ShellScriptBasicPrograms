@@ -1,47 +1,55 @@
 #!/bin/bash -x
 
+#VARIABLES
+isprime=0;
+number=0;
+result=0;
+revNumber=0;
+temp=0;
+originalNumber=0;
+reverse=0;
+
 #USER INPUT
-read -p "Enter a Number : " num
+read -p "Enter a Number : " number
 
-#function to check whether number is prime or not:
+#FUNCTION TO CHECK NUMBER IS PRIME OR NOT
 function isPrime() {
-isprime=1;
-for (( i=2; i<=$num/2; i++ ))
-do
-if [ $(($num%$i)) -eq 0 ]
-	then
-		isprime=$(($isprime-1));
-	break;
-fi
-done
+	isprime=1;
+	for (( index=2; index<=$number/2; index++ ))
+	do
+		if [ $(($number%$index)) -eq 0 ]
+		then
+			isprime=$(($isprime-1));
+		break;
+		fi
+	done
 
-if [ $isprime -eq 0 ]
+	if [ $isprime -eq 0 ]
 	then
 		echo "Not Prime Number "
-else
+	else
 		echo "prime Number"
-		echo "$(isPalindrome $num)" #calling isPalindrome function to check whether prime number is palindrome or not. 
-fi
+		echo "$(isPalindrome $num)" #CALLING PALINDROME FUNCTION
+	fi
 }
 
-#function to check whether number is palindrome or not:
+#FUNCTION TO CHECK NUMBER IS PALINDROME OR NOT
 function isPalindrome(){
-temp=$num;
-revNum=0;
-
-while [[ $num -ne 0 ]]
-do
-	rev=$(($num%10));
-   revNum=$((revNum*10+$rev));
-   num=$(($num/10));
-done
-if [[ $temp -eq $revNum ]]
-then
-	echo "Number is Palindrom "
-else
-	echo "Number is Not Palindrom"
-fi
+	originalNumber=$number;
+	revNumber=0;
+	while [[ $number -ne 0 ]]
+	do
+		reverse=$(($number%10));
+		revNumber=$((revNumber*10+$reverse));
+		number=$(($number/10));
+	done
+	if [ $originalNumber -eq $revNumber ]
+	then
+		echo "Number is Palindrom "
+	else
+		echo "Number is Not Palindrom"
+	fi
 }
 
-result= echo "$( isPrime $num )";
-result= echo "$( isPrime $revNum )";
+result= echo "$( isPrime $number )";
+result= echo "$( isPrime $revNumber )";
