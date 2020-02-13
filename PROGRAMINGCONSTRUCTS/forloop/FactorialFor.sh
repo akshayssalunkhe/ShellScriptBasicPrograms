@@ -1,15 +1,14 @@
 #!/bin/bash -x
 
-#USER INPUT
-read -p "Enter a Number To Find Factorial : " N
+#VARIABLES
+number=0;
+factorial=1;
 
-#VARIABLE
-fact=1;
+#TAKING USER INPUT
+read -p "Enter a Number To Find Factorial:" number
 
-for (( i=1; i<=$N; i++ ))
+#CALCULATING FACTORIAL
+for (( index=1; index<=$number; index++ ))
 do
-	fact=$(($fact*$i));
+	factorial=$(($factorial*$index));
 done
-
-echo "Factorial of $N = $fact"
-
