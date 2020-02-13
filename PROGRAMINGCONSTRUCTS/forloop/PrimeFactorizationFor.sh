@@ -1,16 +1,20 @@
 #!/bin/bash -x
 
-#INPUT FROM USER
-read -p "Enter Number : " NUM
+#VARIABLE
+number=0;
 
-for (( i=2; i<=$NUM;  ))
+#INPUT FROM USER
+read -p "Enter Number: " number
+
+#CALCULATING PRIME FACTORS OF NUMBER
+for (( index=2; index<=$number;  ))
 do
-	if [ $(($NUM%$i)) -eq 0 ]
-then
-		echo "$i"
-		NUM=$(($NUM/$i))
-else
-		((i=$i+1))
-fi
+	if [ $(($number%$index)) -eq 0 ]
+	then
+		echo $index
+		number=$(($number/$index))
+	else
+		((index++))
+	fi
 done
 
