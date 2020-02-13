@@ -1,17 +1,19 @@
 #!/bin/bash -x
 
-#GENERATING NUMBERS AND FINDING REPETATION
-for((i=1;i<=100;i++))
-do
-		x=$(($i % 10))
-		y=$(($i / 10))
+#VARIABLES
+unitPlace=0;
+tenthPlace=0;
+j=0;
 
-	if(($x==$y))
+#GENERATING NUMBERS AND FINDING REPETATION
+for(( index=1; index<=100; index++ ))
+do
+	unitPlace=$(($index % 10))
+	tenthPlace=$(($index / 10))
+
+	if [ $unitPlace -eq $tenthPlace ]
 	then
-		a[$j]=$i
-		j=$(($j+1))
+		repeatedNumbers[j]=$index
+		((j++))
 	fi
 done
-
-#DISPLAYING ARRAY OF REAPEATED ELEMENTS
-echo "${a[@]}"
