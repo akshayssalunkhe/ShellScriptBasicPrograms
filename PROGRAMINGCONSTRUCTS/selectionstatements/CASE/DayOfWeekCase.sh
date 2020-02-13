@@ -1,28 +1,31 @@
 #!/bin/bash -x
 
+#VARIABLE
+number=0;
+
 #USER INPUT
-read -p "Enter number " n
-if [ $n -eq 1 ]
+read -p "Enter number " number
+if [ $number -eq 1 ]
 then
-   echo "SUNDAY"
-elif [ $n -eq 2 ]
+	echo "SUNDAY"
+elif [ $number -eq 2 ]
 then
-    echo "MONDAY"
-elif [ $n -eq 3 ]
+	echo "MONDAY"
+elif [ $number -eq 3 ]
 then
-    echo "TUESDAY"
-elif [ $n -eq 4 ]
+	echo "TUESDAY"
+elif [ $number -eq 4 ]
 then
-    echo "WEDNESDAY"
-elif [ $n -eq 5 ]
+	echo "WEDNESDAY"
+elif [ $number -eq 5 ]
 then
-    echo "THURSDAY"
-elif [ $n -eq 6 ]
+	echo "THURSDAY"
+elif [ $number -eq 6 ]
 then
-    echo "FRIDAY"
-elif [ $n -eq 7 ]
+	echo "FRIDAY"
+elif [ $number -eq 7 ]
 then
-    echo "SATUREDAY"
+	echo "SATUREDAY"
 else
 	echo "Wrong Input"
 fi
