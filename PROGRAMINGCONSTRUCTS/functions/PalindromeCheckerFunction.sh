@@ -1,23 +1,27 @@
 #!/bin/bash -x
 
+#VARIABLES
+number=0;
+revnumber=0;
+reverse=0;
+originalNumber=0;
+
 #FUNCTIN TO CHECK WETHERE NUMBER IS PALINDROM OR NOT
 function isPalindrome(){
-	temp=$num;
-	revNum=0;
-	while [[ $num -ne 0 ]]
+	originalNumber=$number;
+	while [[ $number -ne 0 ]]
 	do
-		rev=$(($num%10));
-		revNum=$((revNum*10+$rev));
-		num=$(($num/10));
-  done
-	if [[ $temp -eq $revNum ]]
+		reverse=$(($number%10));
+		revnumber=$((revnumber*10+$reverse));
+		number=$(($number/10));
+	done
+	if [[ $originalNumber -eq $revnumber ]]
 	then
-		echo "Number is Palindrom "
+		echo "number is Palindrom "
 	else
-		echo "Number is Not Palindrom"
-	fi 
+		echo "number is Not Palindrom"
+	fi
 }
 
-read -p "Enter a Number : " num
-
-result= echo "$( isPalindrome $(num) )"
+read -p "Enter a number : " number
+result= echo "$( isPalindrome $(number) )"
