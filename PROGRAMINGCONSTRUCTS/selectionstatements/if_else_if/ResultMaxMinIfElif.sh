@@ -1,50 +1,58 @@
 #!/bin/bash -x
 
+#VARIABLES
+firstNumber=0;
+secondNumber=0;
+thirdNumber=0;
+firstResult=0;
+secondResult=0;
+thirdResult=0;
+fourthResult=0;
+
 #USER INPUT
-read -p "Enter First Number: " a
-read -p "Enter Second Number: " b
-read -p "Enter Third Number: " c
+read -p "Enter First Number: " firstNumber
+read -p "Enter Second Number: " secondNumber
+read -p "Enter Third Number: " thirdNumber
 
 #CALCULATIONS
-R1=$(($a+$b*$c))
-echo "$R1"
+firstResult=$(($firstNumber+$secondNumber*$thirdNumber))
+echo "$firstResult"
 
-R2=$(($a%$b+$c))
-echo "$R2"
+secondResult=$(($firstNumber%$secondNumber+$thirdNumber))
+echo "$secondResult"
 
-R3=$(($c+$a/$b))
-echo "$R3"
+thirdResult=$(($thirdNumber+$firstNumber/$secondNumber))
+echo "$thirdResult"
 
-R4=$(($a*$b+$c))
-echo "$R4"
+fourthResult=$(($firstNumber*$secondNumber+$thirdNumber))
+echo "$fourthResult"
 
-#TO FIND GREATER AMONG  RESULT
-if [ $R1 -gt $R2 -a $R1 -gt $R3 -a $R1 -gt $R4 ]
+#TO FIND GREATER AMONG  RESULTS
+if [ $firstResult -gt $secondResult -a $firstResult -gt $thirdResult -a $firstResult -gt $fourthResult ]
 then
-	echo "R1 is GREATER"
-elif [ $R2 -gt $R1 -a $R2 -gt $R3 -a $R2 -gt $R4 ]
+	echo "firstResult is GREATER"
+elif [ $secondResult -gt $firstResult -a $secondResult -gt $thirdResult -a $secondResult -gt $fourthResult ]
 then
-	echo "R2 is GREATER"
-elif [ $R3 -gt $R1 -a $R3 -gt $R2 -a $R3 -gt $R4 ]
+	echo "secondResult is GREATER"
+elif [ $thirdResult -gt $firstResult -a $thirdResult -gt $secondResult -a $thirdResult -gt $fourthResult ]
 then
-   echo "R3 is GREATER"
-elif [ $R4 -gt $R1 -a $R4 -gt $R2 -a $R4 -gt $R3 ]
+	echo "thirdResult is GREATER"
+elif [ $fourthResult -gt $firstResult -a $fourthResult -gt $secondResult -a $fourthResult -gt $thirdResult ]
 then
-   echo "R4 is GREATER"
-
+	echo "fourthResult is GREATER"
 fi
 
-#TO FIND LEAST AMONG RESULT
-if [ $R1 -lt $R2 -a $R1 -lt $R3 -a $R1 -lt $R4 ]
+#TO FIND LEAST AMONG RESULTS
+if [ $firstResult -lt $secondResult -a $firstResult -lt $thirdResult -a $firstResult -lt $fourthResult ]
 then
-   echo "R1 is LEAST"
-elif [ $R2 -lt $R1 -a $R2 -lt $R3 -a $R2 -lt $R4 ]
+	echo "firstResult is LEAST"
+elif [ $secondResult -lt $firstResult -a $secondResult -lt $thirdResult -a $secondResult -lt $fourthResult ]
 then
-   echo "R2 is LEAST"
-elif [ $R3 -lt $R1 -a $R3 -lt $R2 -a $R3 -lt $R4 ]
+	echo "secondResult is LEAST"
+elif [ $thirdResult -lt $firstResult -a $thirdResult -lt $secondResult -a $thirdResult -lt $fourthResult ]
 then
-   echo "R3 is LEAST"
-elif [ $R4 -lt $R1 -a $R4 -lt $R2 -a $R4 -lt $R3 ]
+	echo "thirdResult is LEAST"
+elif [ $fourthResult -lt $firstResult -a $fourthResult -lt $secondResult -a $fourthResult -lt $thirdResult ]
 then
-   echo "R4 is LEAST"
+	echo "fourthResult is LEAST"
 fi
