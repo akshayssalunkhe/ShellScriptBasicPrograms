@@ -1,40 +1,43 @@
 #!/bin/bash -x
 
+#VARIABLE
+value=0
+
 #INPUT FROM USER
-read -p "Enter the Value: " V
+read -p "Enter The Value: " value
 
-if [ $V -eq 1 ]
+#CHECKING FOR CONDITION
+if [ $value -eq 1 ]
 then
-      echo "ONE"
+	echo "ONE"
 fi
 
-if [ $V -eq 10 ]
+if [ $value -eq 10 ]
 then
-      echo "TEN"
+	echo "TEN"
 fi
 
-if [ $V -eq 100 ]
+if [ $value -eq 100 ]
 then
-      echo "HUNDRED"
+	echo "HUNDRED"
 fi
 
-if [ $V -eq 1000 ]
+if [ $value -eq 1000 ]
 then
-      echo "THOUSAND"
+	echo "THOUSAND"
 fi
 
-if [ $V -eq 10000 ]
+if [ $value -eq 10000 ]
 then
-      echo "TEN THOUSAND"
+	echo "TEN THOUSAND"
 fi
 
-if [ $V -eq 100000 ]
+if [ $value -eq 100000 ]
 then
-      echo "HUNDRED THOUSAND"
+	echo "HUNDRED THOUSAND"
 fi
 
-if [ $V -ne 1  -a  $V -ne 10 -a  $V -ne 100  -a  $V -ne 1000  -a  $V -ne 10000  -a  $V -ne 100000 ]
+if [ $value -ne 1  -a  $value -ne 10 -a  $value -ne 100  -a  $value -ne 1000  -a  $value -ne 10000  -a  $value -ne 100000 ]
 then
-      echo "WRONG INPUT"
+	echo "WRONG INPUT"
 fi
-
