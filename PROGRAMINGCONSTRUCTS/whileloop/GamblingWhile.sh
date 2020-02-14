@@ -6,13 +6,15 @@ goal=200;
 bet=1;
 win=0
 loss=0;
+result=0;
+minimumAmount=1;
 
 #MAIN LOGIC OF GAMBLING
-while [[ $stack -ge 1 && $stack -lt 200 ]]
+while [[ $stack -ge $minimumAmount && $stack -lt $goal ]]
 do
-	z=$((RANDOM%2));
+	result=$((RANDOM%2));
 	bet=$(($bet+1));
-	if [[ $z -eq 0 ]]
+	if [[ $result -eq 0 ]]
 	then
 		stack=$(($stack+1));
 		win=$(($win+1));
