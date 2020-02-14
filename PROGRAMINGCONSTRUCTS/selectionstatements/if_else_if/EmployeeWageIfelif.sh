@@ -1,24 +1,29 @@
 #!/bin/bash -x
 
-isPartTime=1;
-isFullTime=2;
-empRatePerHr=20;
+#CONSTANTS
+IS_PART_TIME=1;
+IS_FULL_TIME=2;
+EMPLOYEE_RATE_PER_HR=20;
+
+#VARIABLES
+randomCheck=0;
+employeeHrs=0;
+salary=0;
+
+#GENERATING RANDOM VALUES
 randomCheck=$((RANDOM%3));
 
-if [ $isFullTime -eq $randomCheck ];
+#CHECKING CONDITION
+if [ $IS_FULL_TIME -eq $randomCheck ];
 then
-		empHrs=8;
-elif [ $isPartTime -eq $randomCheck ];
+	employeeHrs=8;
+elif [ $IS_PART_TIME -eq $randomCheck ];
 then
-		empHrs=4;
+	employeeHrs=4;
 else
-	empHrs=0;
+	employeeHrs=0;
 fi
 
-salary=$(($empHrs*$empRatePerHr));
+#CALCULATING SALARY
+salary=$(($employeeHrs*$EMPLOYEE_RATE_PER_HR));
 echo "salary is =  $salary"
-
-
-
-
-
