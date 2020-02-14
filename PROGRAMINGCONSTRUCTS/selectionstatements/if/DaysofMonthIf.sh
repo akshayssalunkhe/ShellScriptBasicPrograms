@@ -1,20 +1,24 @@
 #!/bin/bash -x
 
-#USER INPUT FOR DAY AND MOUNTH
-read -p "enter the month" m
-read -p "enter day " d
+#VARIABLES
+day=0;
+month=0;
 
-if [[ $m -ge 3 && $m -le 6 ]]
+#USER INPUT FOR DAY AND MONTH
+read -p "Enter The Month Number" month
+read -p "Enter Day Number" day
+
+if [[ $month -ge 3 && $month -le 6 ]]
 then
-	if [[ $m -eq 3 && $d -ge 20 && $d -le 31 ]] ||
-       [[ $m -eq 4 && $d -ge 1 && $d -le 30 ]] ||
-	   [[ $m -eq 5 && $d -ge 1 && $d -le 31 ]] ||
-	   [[ $m -eq 6 && $m -ge 1 && $d -le 20 ]] 
-		then
+	if [[ $month -eq 3 && $day -ge 20 && $day -le 31 ]] ||
+		[[ $month -eq 4 && $day -ge 1 && $day -le 30 ]] ||
+		[[ $month -eq 5 && $day -ge 1 && $day -le 31 ]] ||
+		[[ $month -eq 6 && $month -ge 1 && $day -le 20 ]] 
+	then
 		echo "TRUE"
-		else
+	else
 		echo "FALSE"
-    fi
+	fi
 else
 	echo "FALSE"
 fi
