@@ -1,17 +1,21 @@
 #!/bin/bash -x
 
+#VARIABLES
 countHead=0;
 countTail=0;
+limit=11;
+result=0;
 
-while [[ $countHead -lt 11 && $countTail -lt 11 ]]
+#LOOP TO CHECK CONDITION
+while [[ $countHead -lt $limit && $countTail -lt $limit ]]
 do
-	z=$((RANDOM%2));
-	if [[ $z -eq 0 ]]
+	result=$((RANDOM%2));
+	if [[ $result -eq 0 ]]
 	then
-			countHead=$(($countHead+1));
-			echo "Head $countHead";
+		countHead=$(($countHead+1));
+		echo "Head $countHead";
 	else
-			countTail=$(($countTail+1));
-			echo "Tail $countTail";
+		countTail=$(($countTail+1));
+		echo "Tail $countTail";
 	fi
 done
